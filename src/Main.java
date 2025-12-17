@@ -13,7 +13,7 @@ public class Main {
         agency.displayInfo();
 
         if (p1.getPrice() > p2.getPrice()) {
-            System.out.println("Property 1 is more expensive.");
+            System.out.println("Property 1 is more expensive. ");
         } else {
             System.out.println("Property 2 is more expensive.");
         }
