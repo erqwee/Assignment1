@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Property p1 = new Property("New York", 500000, 80);
+        Property p1 = new Property("New York", 50000, 80);
         Property p2 = new Property("Los Angeles", 650000, 90);
 
         Realtor realtor = new Realtor("Alice", 5);
