@@ -1,5 +1,6 @@
-public class Property {
+import java.util.Objects;
 
+public abstract class Property {
     private String address;
     private double price;
     private int size;
@@ -10,33 +11,27 @@ public class Property {
         this.size = size;
     }
 
-    public String getAddress() {
-        return address;
+    public abstract double calculateTax();
+
+
+    @Override
+    public String toString() {
+        return String.format("Property{Address='%s', Price=%.2f, Size=%d}", address, price, size);
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Property property = (Property) o;
+        return Objects.equals(address, property.address);
     }
 
-    public double getPrice() {
-        return price;
+    @Override
+    public int hashCode() {
+        return Objects.hash(address);
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public void displayInfo() {
-        System.out.println("Address: " + address +
-                ", Price: $" + price +
-                ", Size: " + size + " sqm");
-    }
+    public double getPrice() { return price; }
+    public String getAddress() { return address; }
 }
